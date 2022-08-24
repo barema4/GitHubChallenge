@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import styled from "styled-components"
+import { ThemeContextProvider } from "./contexts/ThemeContext"
+import { TopArea } from "../src/components/TopArea";
+import { useState } from "react";
+import { UserProps } from "./types";
+import { Index } from "../src/components/UserDetails/Index";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, setUser] = useState<UserProps | null>(null)
+
+  function setUserData(user: UserProps | null): void {
+    setUser(user)
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <ThemeContextProvider>
+      <Container>
+        <TopArea setUser={setUserData} />
+        {user && <Index user={user} />}
+      </Container>
+    </ThemeContextProvider>
+  );
 }
+
+const Container = styled.main`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ${props => props.theme.colors.background};
+  padding: 3.1rem 2.4rem;
+
+  @media (min-width: 768px) {
+    padding: 3.1rem 7rem;
+  }
+`;
 
 export default App
