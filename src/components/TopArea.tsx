@@ -107,7 +107,7 @@ export const TopArea = ({ setUser }: TopAreaProps) => {
                     name="username"
                     id="username"
                     type="text"
-                    placeholder="Search username ..."
+                    placeholder="Search GitHub username ..."
                 />
                 {empty && <Warn>Enter User</Warn>}
                 {notFound && <Warn>Not Found</Warn>}
