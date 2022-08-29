@@ -24,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
 `;
+// if (process.env.NODE_ENV === 'development') {
+//   const { worker } = require('./mocks/browser')
+//   worker.start()
+// }
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

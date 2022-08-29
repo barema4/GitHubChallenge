@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState, useRef } from "react";
+import fetch from 'cross-fetch';
 import styled from "styled-components";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { TopAreaProps, UserProps } from "../types";
