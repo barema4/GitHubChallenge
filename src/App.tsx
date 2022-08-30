@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { ThemeContextProvider } from "./contexts/ThemeContext"
-import { TopArea } from "../src/components/TopArea";
+import { TopArea } from "./components/containers/TopArea";
 import { useState } from "react";
 import { UserProps } from "./types";
-import { Index } from "../src/components/UserDetails/Index";
+import { Index } from "./components/presentational/Index";
 
 function App() {
   const [user, setUser] = useState<UserProps | null>(null)

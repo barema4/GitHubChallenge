@@ -1,37 +1,37 @@
 import styled from "styled-components";
 
 interface TopAreaProps {
-    username: string;
-    bio: string;
-    name: string;
-    joinedAt: string;
-    pfp: string;
+  username: string;
+  bio: string;
+  name: string;
+  joinedAt: string;
+  pfp: string;
 }
 
 export const TopArea = ({
-    username,
-    name,
-    joinedAt,
-    bio,
-    pfp,
+  username,
+  name,
+  joinedAt,
+  bio,
+  pfp,
 }: TopAreaProps) => {
-    return (
-        <>
-            <Info>
-                <Pfp src={pfp} alt={name} />
-                <SideInfo>
-                    <Name>{name}</Name>
-                    <Username>
-                        <a href={`https://github.com/${username}`}>@{username}</a>
-                    </Username>
+  return (
+    <>
+      <Info>
+        <Pfp src={pfp} alt={name} />
+        <SideInfo>
+          <Name>{name}</Name>
+          <Username>
+            <a href={`https://github.com/${username}`}>@{username}</a>
+          </Username>
 
-                    <JoinedAt>{joinedAt}</JoinedAt>
-                </SideInfo>
-            </Info>
-            {bio ? <Bio>{bio}</Bio> : <NoBio>This profile has no bio</NoBio>}
+          <JoinedAt>{joinedAt}</JoinedAt>
+        </SideInfo>
+      </Info>
+      {bio ? <Bio data-testid="bio">{bio}</Bio> : <NoBio>This profile has no bio</NoBio>}
 
-        </>
-    );
+    </>
+  );
 };
 
 const Info = styled.div`

@@ -2,7 +2,6 @@ import { rest } from 'msw'
 
 export const handlers = [
   rest.get('https://api.github.com/users/barema4', (req, res, ctx) => {
-    const { username } = req.body
 
     return res(
       ctx.json({

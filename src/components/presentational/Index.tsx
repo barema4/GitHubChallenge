@@ -5,29 +5,29 @@ import { StartArea } from "./StartArea";
 import { UserDataProps } from "../../types";
 
 export const Index = ({ user }: UserDataProps) => {
-    return (
-        <Container>
-            <Pfp src={user.pfp} alt={user.name} />
+  return (
+    <Container>
+      <Pfp src={user.pfp} alt={user.name} />
 
-            <SideArea>
-                <TopArea
-                    username={user.username}
-                    bio={user.bio}
-                    name={user.name}
-                    joinedAt={user.joinedAt}
-                    pfp={user.pfp}
-                />
+      <SideArea>
+        <TopArea
+          username={user.username}
+          bio={user.bio}
+          name={user.name}
+          joinedAt={user.joinedAt}
+          pfp={user.pfp}
+        />
 
-                <StartArea
-                    repos={user.repos}
-                    followers={user.followers}
-                    following={user.following}
-                />
+        <StartArea
+          repos={user.repos}
+          followers={user.followers}
+          following={user.following}
+        />
 
-                <LinksArea links={user.links} />
-            </SideArea>
-        </Container>
-    );
+        <LinksArea links={user.links} />
+      </SideArea>
+    </Container>
+  );
 };
 
 const Container = styled.section`
