@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { TopArea } from '../TopArea';
 import { ThemeContextProvider } from '../../../contexts/ThemeContext'
 

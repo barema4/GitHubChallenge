@@ -56,8 +56,6 @@ export const TopArea = ({ setUser }: TopAreaProps) => {
         blog: data.blog,
       },
     };
-    console.log(data);
-
     setUser(user);
     setLoading(false)
   }
